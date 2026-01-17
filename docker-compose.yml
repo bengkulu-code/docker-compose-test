@@ -14,5 +14,10 @@ services:
     networks:
       - dokploy-network
     labels:
+        - "traefik.enable=true"
+      - "traefik.http.routers.dokdokploy.rule=Host(`dokdok.satudata.space`)"
+      - "traefik.http.routers.dokdokploy.entrypoints=websecure"
+      - "traefik.http.routers.dokdokploy.tls.certResolver=letsencrypt"
+      - "traefik.http.services.dokdokploy.loadbalancer.server.port=3009"
   dokploy-network:
     external: true
