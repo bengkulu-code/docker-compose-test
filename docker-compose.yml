@@ -15,10 +15,10 @@ services:
       - dokploy-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.<unique-name>.rule=Host(`dok.satudata.space`)"
-      - "traefik.http.routers.<unique-name>.entrypoints=websecure"
-      - "traefik.http.routers.<unique-name>.tls.certResolver=letsencrypt"
-      - "traefik.http.services.<unique-name>.loadbalancer.server.port=3000"
+      - "traefik.http.routers.dokdokploy.rule=Host(`dok.satudata.space`)"
+      - "traefik.http.routers.dokdokploy.entrypoints=websecure"
+      - "traefik.http.routers.dokdokploy.tls.certResolver=letsencrypt"
+      - "traefik.http.services.dokdokploy.loadbalancer.server.port=3000"
 networks:
   dokploy-network:
     external: true
