@@ -14,7 +14,7 @@ services:
     networks:
       - dokploy-network
     labels:
-        - "traefik.enable=true"
+      - "traefik.enable=true"
       - "traefik.http.routers.dokdokploy.rule=Host(`dokdok.satudata.space`)"
       - "traefik.http.routers.dokdokploy.entrypoints=websecure"
       - "traefik.http.routers.dokdokploy.tls.certResolver=letsencrypt"
